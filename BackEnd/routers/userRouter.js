@@ -20,6 +20,8 @@ UserRoute.post('/forget-password', forgetPassword);
 
 UserRoute.post('/reset-password', resetPassword);
 
+UserRoute.get('/user-profile', authMiddleware(['user', 'admin']), getUser)
+
 
 
 module.exports = UserRoute
