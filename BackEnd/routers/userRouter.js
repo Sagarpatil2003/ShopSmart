@@ -18,6 +18,8 @@ UserRoute.post('/login', loginUser)
 
 UserRoute.post('/forget-password', forgetPassword);
 
+UserRoute.post('/reset-password', resetPassword);
+
 
 
 module.exports = UserRoute
