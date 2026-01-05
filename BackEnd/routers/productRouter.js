@@ -20,6 +20,4 @@ ProductRouter.get('/product/:id', getProduct)
 ProductRouter.get("/search", searchProduct)
 
 
-
-
 module.exports = ProductRouter
