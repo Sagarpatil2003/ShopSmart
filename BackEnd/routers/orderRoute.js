@@ -23,7 +23,7 @@ OrderRouter.post('/buy-selected-items', authMiddleware(['user']), orderSelectedF
 
 OrderRouter.post('/buy-now', authMiddleware(['user']), buyNowOrder)
 
-
+OrderRouter.post('/return-order/:orderId', authMiddleware(['user']), returnOrder)
 
 
 module.exports = OrderRouter
