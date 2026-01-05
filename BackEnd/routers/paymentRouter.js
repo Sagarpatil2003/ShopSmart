@@ -1,8 +1,5 @@
 const express = require('express')
-const crypto = require('crypto')
-const razorpay = require('../config/razorpayConfig')
-const OrderModel = require('../models/orderModel')
-const PaymentModel = require('../models/paymentModel')
+
 const authMiddleware = require('../middlewares/authMiddlewares')
 const { createOrder, webHookVerification } = require('../controllers/paymentController')
 
