@@ -22,6 +22,8 @@ UserRoute.post('/reset-password', resetPassword);
 
 UserRoute.get('/user-profile', authMiddleware(['user', 'admin']), getUser)
 
+UserRoute.put('/update-profile', authMiddleware(['user']), updateUserProfile)
+
 
 
 module.exports = UserRoute
