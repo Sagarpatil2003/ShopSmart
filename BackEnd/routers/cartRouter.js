@@ -1,9 +1,6 @@
 const express = require("express")
 const authMiddleware = require("../middlewares/authMiddlewares")
-const CartModel = require("../models/cartModel")
-const ProductModel = require("../models/productModel")
 const { getCartList, addToCart, updateCart, deleteCart, deleteAll } = require("../controllers/cartController")
-const redis = require("../config/redisConfig")
 const CartRouter = express.Router()
 
 CartRouter.get('/', authMiddleware(['user', 'admin']), getCartList)
