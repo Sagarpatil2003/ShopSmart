@@ -15,15 +15,7 @@ let OrderRouter = express.Router()
 
 OrderRouter.get('/order-history', authMiddleware(["user"]), getHistory)
 
-OrderRouter.get('/order/:orderId', authMiddleware(["user"]), getOrderById)
 
-OrderRouter.post('/buy-all-items', authMiddleware(['user']), orderAllCartItem)
-
-OrderRouter.post('/buy-selected-items', authMiddleware(['user']), orderSelectedFromCart)
-
-OrderRouter.post('/buy-now', authMiddleware(['user']), buyNowOrder)
-
-OrderRouter.post('/return-order/:orderId', authMiddleware(['user']), returnOrder)
 
 
 module.exports = OrderRouter
