@@ -21,6 +21,8 @@ OrderRouter.post('/buy-all-items', authMiddleware(['user']), orderAllCartItem)
 
 OrderRouter.post('/buy-selected-items', authMiddleware(['user']), orderSelectedFromCart)
 
+OrderRouter.post('/buy-now', authMiddleware(['user']), buyNowOrder)
+
 
 
 
