@@ -13,4 +13,5 @@ CartRouter.delete('/delete/:productId', authMiddleware(['user']), deleteCart)
 
 CartRouter.delete("/clear", authMiddleware(['user']), deleteAll)
 
+
 module.exports = CartRouter
