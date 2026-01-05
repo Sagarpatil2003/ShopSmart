@@ -24,6 +24,6 @@ UserRoute.get('/user-profile', authMiddleware(['user', 'admin']), getUser)
 
 UserRoute.put('/update-profile', authMiddleware(['user']), updateUserProfile)
 
-
+UserRoute.get('/history', authMiddleware(['user', 'admin']), orderHistory)
 
 module.exports = UserRoute
