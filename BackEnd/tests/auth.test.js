@@ -8,7 +8,6 @@ jest.mock('nodemailer', () => {
         __mockSendMail: mockSendMail
     }
 })
-
 const request = require('supertest')
 const app = require('../server')
 const crypto = require('crypto')
@@ -18,8 +17,6 @@ const ProductModel = require('../models/productModel')
 const OrderModel = require('../models/orderModel')
 const nodemailer = require('nodemailer')
 const mockSendMail = nodemailer.__mockSendMail
-
-
 
 
 const userInfo = {
@@ -157,8 +154,8 @@ describe('Authentication API', () => {
 
         let product_1 = await ProductModel.create({ title: 'Product_1', description: "This product use for testing", price: 100, category: 'api testing', brand: 'Api pro', images: [], stock: 10 })
         let product_2 = await ProductModel.create({ title: 'Product_2', description: "This product use for testing", price: 100, category: 'api testing', brand: 'Api pro', images: [], stock: 10 })
-        let user = await UserModel.findOne({email: userInfo.email})
-        
+        let user = await UserModel.findOne({ email: userInfo.email })
+
         await OrderModel.create({
             user: user._id,
             items: [
@@ -168,11 +165,11 @@ describe('Authentication API', () => {
         })
 
         let res = await request(app)
-        .get('/users/history')
-        .set('Authorization', token)
-        
+            .get('/users/history')
+            .set('Authorization', token)
+
         expect(res.statusCode).toBe(200)
-        
+
 
     })
 })
